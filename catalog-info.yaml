@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: default
+  annotations:
+    tektonci/build-namespace: tekton
+    tektonci/pipeline-label-selector: 'build-name=developer-app-deploy'
+    'backstage.io/kubernetes-id': dice-roller
+  name: developer-repo
+  description: Developer repo Catalog
+spec:
+  type: service
+  lifecycle: production
+  owner: user:guest

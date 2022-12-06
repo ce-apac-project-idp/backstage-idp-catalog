@@ -5,7 +5,6 @@ metadata:
   annotations:
     tektonci/build-namespace: tekton
     tektonci/pipeline-label-selector: 'build-name=developer-app-deploy'
-    'backstage.io/kubernetes-id': dice-roller
     'backstage.io/kubernetes-id': crossplane-rds
   name: developer-repo
   description: Developer repo Catalog

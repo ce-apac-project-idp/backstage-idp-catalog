@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: default
+  annotations:
+    'backstage.io/kubernetes-id': managed-clusters
+  name: managed-clusters
+  description: RHACM Managed Clusters
+spec:
+  type: service
+  lifecycle: production
+  owner: user:guest

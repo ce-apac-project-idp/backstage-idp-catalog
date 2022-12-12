@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: default
+  annotations:
+    backstage.io/kubernetes-id: managed-clusters
+    tektonci/build-namespace: backstage
+    tektonci/pipeline-label-selector: 'build-name=deploy-cluster-pipeline'
+  name: deployed-clusters
+  description: Deployed Clusters
+spec:
+  type: service
+  lifecycle: production
+  owner: user:guest

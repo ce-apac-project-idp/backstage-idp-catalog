@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: hub-cluster
+  name: local-cluster
   title: OTP Hub Cluster
   description: OTP Hub Cluster
 spec:

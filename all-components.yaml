@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: components
+  description: A collection of all components
+spec:
+  targets:
+    - ./components/deployed-clusters.yaml
+    - ./components/developer-repo.yaml
+    - ./components/managed-clusters.yaml
+    - ./components/example-website.yaml

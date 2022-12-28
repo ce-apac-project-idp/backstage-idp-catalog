@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: entities
+  description: A collection of all the service catalog entities
+spec:
+  targets:
+    - ./all-apis.yaml
+    - ./all-components.yaml
+    - ./all-domains.yaml
+    - ./all-groups.yaml
+    - ./all-resources.yaml
+    - ./all-systems.yaml
+    - ./all-templates.yaml
+    - ./all-users.yaml

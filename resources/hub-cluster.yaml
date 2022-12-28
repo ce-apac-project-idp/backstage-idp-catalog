@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hub-cluster
+  title: OTP Hub Cluster
+  description: OTP Hub Cluster
+spec:
+  type: kubernetes-cluster
+  lifecycle: experimental
+  owner: group:ce-apac

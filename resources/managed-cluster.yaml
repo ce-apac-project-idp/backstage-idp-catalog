@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: managed-cluster
+  title: RODS managed Cluster
+  description: RODS managed Cluster that is managed by OTP Hub Cluster
+spec:
+  type: kubernetes-cluster
+  lifecycle: experimental
+  owner: group:ce-apac

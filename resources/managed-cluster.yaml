@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: rods-managed-cluster
-  title: RODS managed Cluster
-  description: RODS managed Cluster that is managed by OTP Hub Cluster
+  name: roks-managed-cluster
+  title: ROKS managed Cluster
+  description: ROKS managed Cluster that is managed by OTP Hub Cluster
 spec:
   type: kubernetes-cluster
   lifecycle: experimental

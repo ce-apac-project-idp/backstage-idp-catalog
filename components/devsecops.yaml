@@ -6,8 +6,8 @@ metadata:
     # backstage.io/kubernetes-id: managed-clusters
     tektonci/build-namespace: marwan-dev
     tektonci/pipeline-label-selector: 'build-name=devsecops'
-  name: deployed-clusters
-  description: Deployed Clusters
+  name: devsecops
+  description: DevSecOps Pipeline Monitoring
 spec:
   type: service
   lifecycle: production

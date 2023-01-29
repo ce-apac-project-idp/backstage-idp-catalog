@@ -58,4 +58,9 @@ spec:
         developerName:  ${{ parameters.developerName }}
         targetEnv: ${{ parameters.targetEnv }}
         applicationName: ${{ parameters.applicationName }}
+  output:
+    links:
+      - title: test
+        url: ${{ steps['publish'].output }}
+
 

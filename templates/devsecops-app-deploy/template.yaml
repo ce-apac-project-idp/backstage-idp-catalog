@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: dev-app-deploy
-  title: Deploy an Application from Source Code Repository
-  description: Deploy Custom Resources from a Repository
+  name: dev-app-deploy-with-devsectops
+  title: Deploy Application with DevSecOps
+  description: Build, scan and deploy from source code using a pipeline secured by RHACS
 spec:
   owner: user:guest
   type: service
@@ -50,17 +50,16 @@ spec:
           ui:options:
             rows: 5
   steps:
-    - id: trigger_build
+    # Trigger devsecops pipeline to build and check developer's application.
+    - id: trigger-build
       name: Trigger Build Pipeline
-      action: ibm:call-cr-pipeline
+      action: ibm:trigger-devsecops-pipeline
       input:
-        repoURL:  ${{ parameters.repoURL }}
-        developerName:  ${{ parameters.developerName }}
-        targetEnv: ${{ parameters.targetEnv }}
         applicationName: ${{ parameters.applicationName }}
+        developerName: ${{ parameters.developerName }}
+        repoURL: ${{ parameters.repoURL }}
+        targetEnv: ${{ parameters.targetEnv }}
   output:
     links:
-      - title: test
-        url: ${{ steps['publish'].output }}
-
-
+      - title: Repository
+        url: ${{ parameters.repoURL }}

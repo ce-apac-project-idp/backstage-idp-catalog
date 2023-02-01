@@ -4,7 +4,7 @@ metadata:
   namespace: default
   annotations:
     'backstage.io/kubernetes-id': crossplane-rds
-    tektonci/build-namespace: tekton
+    tektonci/build-namespace: backstage
     tektonci/pipeline-label-selector: 'build-name=developer-app-deploy'
   name: developer-repo
   description: Developer repo Catalog

@@ -3,7 +3,7 @@ kind: Component
 metadata:
   namespace: default
   annotations:
-    'backstage.io/kubernetes-id': crossplane-rds
+    'backstage.io/kubernetes-id': test-app
     tektonci/build-namespace: backstage
     tektonci/pipeline-label-selector: 'build-name=developer-app-deploy'
   name: developer-repo

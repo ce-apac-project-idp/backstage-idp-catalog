@@ -1,0 +1,65 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: dev-app-deploy-with-devsectops
+  title: Deploy Application with DevSecOps
+  description: Build, scan and deploy from source code using a pipeline secured by RHACS
+spec:
+  owner: user:guest
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - repoURL
+      properties:
+        repoURL:
+          title: Target repo SSH Clone URL
+          type: string
+          description: The SSH Clone URL of the repo containing your Custom Resources
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+    - title: Developer Name
+      required:
+        - developerName
+      properties:
+        developerName:
+          title: Developer Name
+          type: string
+          description: The developer name to associate resources with
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+    - title: Choose a Target Cloud Environment
+      required:
+        - targetEnv
+      properties:
+        targetEnv:
+          title: Target Environment
+          type: string
+          enum: ["IBM Cloud", "AWS", "Azure", "GCP"]
+    - title: Name your deployed application
+      required:
+        - applicationName
+      properties:
+        applicationName:
+          title: Application Name
+          type: string
+          description: Unique name of your application
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+  steps:
+    # Trigger devsecops pipeline to build and check developer's application.
+    - id: trigger-build
+      name: Trigger Build Pipeline
+      action: ibm:trigger-devsecops-pipeline
+      input:
+        applicationName: ${{ parameters.applicationName }}
+        developerName: ${{ parameters.developerName }}
+        repoURL: ${{ parameters.repoURL }}
+        targetEnv: ${{ parameters.targetEnv }}
+  output:
+    links:
+      - title: Repository
+        url: ${{ parameters.repoURL }}

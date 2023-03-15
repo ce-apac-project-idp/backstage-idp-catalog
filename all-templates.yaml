@@ -5,7 +5,6 @@ metadata:
   description: A collection of all templates
 spec:
   targets:
-    - ./templates/example-nodejs/template.yaml
     - ./templates/cluster-deploy/template.yaml
     - ./templates/rds-deploy/template.yaml
     - ./templates/dev-app-deploy/template.yaml    

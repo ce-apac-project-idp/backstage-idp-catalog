@@ -4,5 +4,4 @@ metadata:
   name: apis
   description: A collection of all apis
 spec:
-  targets:
-    - ./apis/grpc.yaml
+  targets: []

@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: dev-app-deploy-with-devsectops
+  name: dev-app-deploy-with-devsecops
   title: Deploy Application with DevSecOps
   description: Build, scan and deploy from source code using a pipeline secured by RHACS
 spec:

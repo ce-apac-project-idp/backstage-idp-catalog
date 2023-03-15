@@ -5,7 +5,6 @@ metadata:
   description: A collection of all templates
 spec:
   targets:
-    - ./templates/cluster-deploy/template.yaml
-    - ./templates/rds-deploy/template.yaml
-    - ./templates/dev-app-deploy/template.yaml    
+    - ./templates/managed-cluster-deploy/template.yaml
     - ./templates/devsecops-app-deploy/template.yaml
+    - ./templates/rds-deploy/template.yaml

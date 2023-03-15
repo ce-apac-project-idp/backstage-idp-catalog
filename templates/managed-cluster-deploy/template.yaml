@@ -1,0 +1,91 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: cluster-deploy
+  title: Deploy a Managed Cluster
+  description: Deploy a managed OpenShift cluster using the IBM OTP pattern
+spec:
+  owner: admins
+  type: service
+
+  parameters:
+    - title: Enter a cluster name
+      required:
+        - clusterName
+      properties:
+        clusterName:
+          title: Cluster Name
+          type: string
+          description: The name of the cluster to be created
+
+    - title: Choose a region
+      required:
+        - clusterRegion
+      properties:
+        clusterRegion:
+          title: Region
+          type: string
+          description: Region the cluster resides within
+          default: ap-southeast-1
+          # mind the order of enums and enumNames
+          enum:
+            - ap-southeast-1 # singapore
+            - ap-southeast-2 # sydney
+            - ap-southeast-3 # jakarta
+            - ap-southeast-4 # melbourne
+          enumNames:
+            - Singapore
+            - Sydney
+            - Jakarta
+            - Melbourne
+
+    - title: Choose the target public cloud
+      required:
+        - targetCloud
+      properties:
+        targetCloud:
+          type: string
+          description: Public cloud provider to host the cluster
+          default: aws
+          # mind the order of enums and enumNames
+          enum:
+            - aws
+            - azure
+            - gcp
+          enumNames:
+            - Amazon Web Service
+            - Microsoft Azure
+            - Google Cloud
+
+    - title: Choose the OpenShift version
+      required:
+        - ocpVersion
+      properties:
+        ocpVersion:
+          title: OpenShift Version
+          type: string
+          default: '4.9'
+          enum:
+            - '4.9'
+            - '4.10'
+            - '4.11'
+            - '4.12'
+
+    - title: Would this cluster use multiple zones?
+      properties:
+        multiZone:
+          title: Is Multiple Zone?
+          type: boolean
+          default: false
+          ui:widget: radio
+
+  steps:
+    - id: deploy-managed-cluster
+      name: Trigger Cluster Deploy Pipeline
+      action: ibm:trigger-cluster-deploy-pipeline
+      input:
+        clusterName: ${{ parameters.clusterName }}
+        clusterRegion: ${{ parameters.clusterRegion }}
+        targetCloud: ${{ parameters.targetCloud }}
+        ocpVersion: ${{ parameters.ocpVersion }}
+        multiZone: ${{ parameters.multiZone }}

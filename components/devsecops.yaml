@@ -3,11 +3,11 @@ kind: Component
 metadata:
   namespace: default
   annotations:
-    'backstage.io/kubernetes-id': test-app
+    # backstage.io/kubernetes-id: managed-clusters
     tektonci/build-namespace: backstage
-    tektonci/pipeline-label-selector: 'build-name=developer-app-deploy'
-  name: developer-repo
-  description: Developer repo Catalog
+    tektonci/pipeline-label-selector: 'build-name=devsecops'
+  name: devsecops
+  description: DevSecOps Pipeline Monitoring
 spec:
   type: service
   lifecycle: production

@@ -4,6 +4,7 @@ metadata:
   namespace: default
   annotations:
     'backstage.io/kubernetes-id': test-app
+    'backstage.io/kubernetes-label-selector': 'appconnect.ibm.com/kind=IntegrationServer'
     tektonci/build-namespace: backstage
     tektonci/pipeline-label-selector: 'build-name=developer-app-deploy'
   name: developer-repo

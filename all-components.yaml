@@ -8,4 +8,6 @@ spec:
     - ./components/deployed-clusters.yaml
     - ./components/developer-repo.yaml
     - ./components/managed-clusters.yaml
+    - ./components/ace-servers.yaml
+    - ./components/mq-servers.yaml
 

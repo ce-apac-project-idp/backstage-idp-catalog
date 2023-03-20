@@ -1,0 +1,51 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
+kind: Template
+metadata:
+  name: deploy-datacap-application
+  title: Datacap Deployment Pipeline
+  description: Enabling Datacap Developers to easily deploy Datacap applications
+spec:
+  owner: user:guest
+  type: service
+
+  # These parameters are used to generate the input form in the frontend, and are
+  # used to gather input data for the execution of the template.
+  parameters:
+    - title: Cloud
+      required:
+        - Cloud
+      properties:
+        Cloud:
+          title: Cloud
+          type: string
+          description: Hyperscaler to deploy this too.
+          enum: ["aws", "azure", "gcp"]
+    - title: Region
+      required:
+        - Region
+      properties:
+        Region:
+          title: Region
+          type: string
+          description: Region to deploy application to
+          enum: ["ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4"]
+    - title: Version
+      required:
+        - Version
+      properties:
+        Version:
+          title: Version
+          type: string
+          description: Version of datacap application to deploy
+          enum: ["9.1.7", "9.1.8", "9.1.9"]
+  # These steps are executed in the scaffolder backend, using data that we gathered
+  # via the parameters above.
+  steps:
+    - id: deploy-datacap-applicaton
+      name: Trigger Datacap Application Deploy Pipeline
+      action: ibm:trigger-datacap-deploy-pipeline
+      input:
+        cloud: ${{ parameters.Cloud }}
+        region: ${{ parameters.Region }}
+        version: ${{ parameters.Version }}

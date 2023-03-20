@@ -1,0 +1,58 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
+kind: Template
+metadata:
+  name: deploy-ace-application
+  title: ACE Deployment Pipeline
+  description: Enabling ACE Developers to easily deploy ACE applications
+spec:
+  owner: user:guest
+  type: service
+
+  # These parameters are used to generate the input form in the frontend, and are
+  # used to gather input data for the execution of the template.
+  parameters:
+    - title: Git Repository
+      required:
+        - Repository
+      properties:
+        Repository:
+          title: Repository
+          type: string
+          description: Repository housing the ACE applications
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+    - title: Bar File
+      required:
+        - BarFile
+      properties:
+        BarFile:
+          title: BarFile
+          type: string
+          description: Name of Bar File
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+    - title: Cluster Name
+      required:
+        - ClusterName
+      properties:
+        ClusterName:
+          title: ClusterName
+          type: string
+          description: Name of cluster to which this ACE application to.
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+
+  # These steps are executed in the scaffolder backend, using data that we gathered
+  # via the parameters above.
+  steps:
+    - id: deploy-ace-applicaton
+      name: Trigger ACE Application Deploy Pipeline
+      action: ibm:trigger-ace-deploy-pipeline
+      input:
+        clusterName: ${{ parameters.ClusterName }}
+        gitRepo: ${{ parameters.Repository }}
+        barfile: ${{ parameters.BarFile }}

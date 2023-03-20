@@ -8,3 +8,4 @@ spec:
     - ./templates/managed-cluster-deploy/template.yaml
     - ./templates/devsecops-app-deploy/template.yaml
     - ./templates/rds-deploy/template.yaml
+    - ./templates/ace-app-deploy/template.yaml

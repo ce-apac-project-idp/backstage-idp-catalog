@@ -1,10 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: roks-managed-cluster
-  title: ROKS managed Cluster
-  description: ROKS managed Cluster that is managed by OTP Hub Cluster
+  name: govtech 
+  title: govtech-managed-cluster 
+  description: Managed AWS cluster 
 spec:
   type: kubernetes-cluster
   lifecycle: experimental
   owner: group:ce-apac
+  cloud: aws

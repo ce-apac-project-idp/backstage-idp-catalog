@@ -11,4 +11,5 @@ spec:
     - ./components/ace-servers.yaml
     - ./components/mq-servers.yaml
     - ./components/ace-server-test.yaml
+    - ./components/mq-server-test.yaml
 

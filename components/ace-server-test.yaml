@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: default
+  annotations:
+    backstage.io/kubernetes-label-selector: "app.kubernetes.io/name=mq-consumer-test"
+    tektonci/build-namespace: tekton
+    tektonci/pipeline-label-selector: 'build-name=ace-resource-submission'
+  name: ace-servers-test
+  description: Deployed Ace Servers
+spec:
+  type: service
+  lifecycle: production
+  owner: user:guest

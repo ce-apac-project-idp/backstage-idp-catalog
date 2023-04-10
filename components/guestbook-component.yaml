@@ -10,3 +10,5 @@ spec:
   type: service
   lifecycle: production
   owner: user:guest
+  dependsOn:
+    - component:default/redis-controller-guestbook

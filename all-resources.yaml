@@ -7,4 +7,3 @@ spec:
   targets:
     - ./resources/hub-cluster.yaml
     - ./resources/managed-cluster.yaml
-    - ./resources/redis-resource.yaml

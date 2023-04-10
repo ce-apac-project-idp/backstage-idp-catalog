@@ -4,4 +4,5 @@ metadata:
   name: domains
   description: A collection of all domains
 spec:
-  targets: []
+  targets:
+    - ./domains/guest/guest-domain.yaml

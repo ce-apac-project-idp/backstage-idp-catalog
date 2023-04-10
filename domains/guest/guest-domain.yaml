@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: guest-domain
+  description: Domain containing guest applications
+spec:
+  owner: user:guest

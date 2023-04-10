@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: guest-system
+  description: Guest apps here
+spec:
+  owner: user:guest
+  domain: guest-domain

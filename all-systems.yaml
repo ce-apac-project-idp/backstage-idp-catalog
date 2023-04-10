@@ -4,4 +4,5 @@ metadata:
   name: example-systems
   description: A collection of all systems
 spec:
-  targets: []
+  targets:
+    - ./systems/guest-apps/guest-system.yaml

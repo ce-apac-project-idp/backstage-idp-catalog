@@ -4,6 +4,7 @@ metadata:
   namespace: default
   annotations:
     backstage.io/kubernetes-label-selector: "app=guestbook"
+    backstage.io/source-location: url:https://github.com/ce-apac-project-idp/backstage-demo
   name: guestbook-web
   description: Web component for guestbook
   links:

@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: default
+  annotations:
+    backstage.io/kubernetes-label-selector: "app=guestbook"
+  name: guestbook-web
+  description: Web component for guestbook
+spec:
+  type: service
+  lifecycle: production
+  owner: user:guest

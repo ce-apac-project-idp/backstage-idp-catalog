@@ -12,3 +12,4 @@ spec:
   type: service
   lifecycle: production
   owner: user:guest
+  system: guest-system

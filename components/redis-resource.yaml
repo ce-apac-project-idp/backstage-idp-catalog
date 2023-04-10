@@ -10,5 +10,6 @@ spec:
   type: database
   lifecycle: production
   owner: user:guest
+  system: guest-system
   dependencyOf:
     - component:default/guestbook-web

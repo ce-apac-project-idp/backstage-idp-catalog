@@ -16,7 +16,7 @@ spec:
         Repository:
           title: Repository
           type: string
-          description: Repository housing the ACE applications
+          description: Repository housing the Guestbook applications
     - title: Repository File
       required:
         - Cluster
@@ -26,14 +26,6 @@ spec:
           type: string
           enum: ["Hub Cluster", "Govtech Cluster", "Azure Cluster"]
           description: Cluster to deploy application to
-    - title: Version
-      required:
-        - Version
-      properties:
-        Version:
-          title: Version
-          type: string
-          description: Name of cluster to which this ACE application to.
   # These steps are executed in the scaffolder backend, using data that we gathered
   # via the parameters above.
   steps:

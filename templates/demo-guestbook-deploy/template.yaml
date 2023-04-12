@@ -22,7 +22,7 @@ spec:
         - Cluster
       properties:
         Cluster:
-          title: BarFile
+          title: Cluster
           type: string
           enum: ["Hub Cluster", "Govtech Cluster", "Azure Cluster"]
           description: Cluster to deploy application to

@@ -17,7 +17,7 @@ spec:
           title: Repository
           type: string
           description: Repository housing the Guestbook applications
-    - title: Repository File
+    - title: Cluster
       required:
         - Cluster
       properties:

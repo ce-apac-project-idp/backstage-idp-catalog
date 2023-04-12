@@ -1,0 +1,46 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
+kind: Template
+metadata:
+  name: deploy-guestbook-application
+  title: GuestBook Deployment
+  description: Golden workflow for demo guest book deployment
+spec:
+  owner: user:guest
+  type: service
+  parameters:
+    - title: Git Repository
+      required:
+        - Repository
+      properties:
+        Repository:
+          title: Repository
+          type: string
+          description: Repository housing the ACE applications
+    - title: Repository File
+      required:
+        - Cluster
+      properties:
+        Cluster:
+          title: BarFile
+          type: string
+          enum: ["Hub Cluster", "Govtech Cluster", "Azure Cluster"]
+          description: Cluster to deploy application to
+    - title: Version
+      required:
+        - Version
+      properties:
+        Version:
+          title: Version
+          type: string
+          description: Name of cluster to which this ACE application to.
+  # These steps are executed in the scaffolder backend, using data that we gathered
+  # via the parameters above.
+  steps:
+    - id: deploy-guestbook-applicaton
+      name: Trigger Guestbook Application Deploy Pipeline
+      action: ibm:trigger-guestbook-deploy-pipeline
+      input:
+        clusterName: ${{ parameters.Cluster }}
+        gitRepo: ${{ parameters.Repository }}
+        version: ${{ parameters.Version }}

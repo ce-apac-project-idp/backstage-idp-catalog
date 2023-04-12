@@ -11,3 +11,4 @@ spec:
     - ./templates/ace-app-deploy/template.yaml
     - ./templates/mq-deploy/template.yaml
     - ./templates/datacap-app-deploy/template.yaml
+    - ./templates/demo-guestbook-deploy/template.yaml

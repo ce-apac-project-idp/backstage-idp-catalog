@@ -43,4 +43,3 @@ spec:
       input:
         clusterName: ${{ parameters.Cluster }}
         gitRepo: ${{ parameters.Repository }}
-        version: ${{ parameters.Version }}

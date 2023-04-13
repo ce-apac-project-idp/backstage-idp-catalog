@@ -5,9 +5,6 @@ metadata:
   description: A collection of all components
 spec:
   targets:
-    - ./components/deployed-clusters.yaml
-    - ./components/developer-repo.yaml
-    - ./components/managed-clusters.yaml
     - ./components/ace-servers.yaml
     - ./components/mq-servers.yaml
     - ./components/ace-server-test.yaml

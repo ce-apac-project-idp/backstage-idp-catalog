@@ -13,3 +13,5 @@ spec:
   lifecycle: production
   owner: user:guest
   system: guest-system
+  dependsOn:
+    - component:default/mq-server-test

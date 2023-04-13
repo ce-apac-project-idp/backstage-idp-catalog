@@ -13,3 +13,5 @@ spec:
   lifecycle: production
   owner: user:guest
   system: guest-system
+  dependencyOf:
+    - component:default/ace-servers-test
